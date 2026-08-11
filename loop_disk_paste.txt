@@ -1,0 +1,5 @@
+make 1gb image file
+dd if=/dev/zero of=./disk.img bs=1M count=1024
+
+create the loop disk
+sudo losetup -f ./disk.img
