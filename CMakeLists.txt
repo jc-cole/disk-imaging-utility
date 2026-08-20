@@ -4,7 +4,7 @@ project(MyProject
         VERSION 1.0.0 
         LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -18,7 +18,6 @@ endif()
 add_library(imager_core STATIC
     src/BlockDevice.cpp
     src/BlockDeviceManager.cpp
-    src/ProcessRunner.cpp
     src/LoopDiskUtils.cpp
 )
 target_include_directories(imager_core PUBLIC include)
