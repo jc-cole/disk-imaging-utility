@@ -1,8 +1,12 @@
 #pragma once
 
+#include "PartitionTable.hpp"
+
 #include <filesystem>
 #include <string>
+#include <optional>
 #include <fstream>
+#include <vector>
 
 class BlockDeviceExcepton : public std::exception {
 private:
@@ -19,6 +23,16 @@ public:
 class BlockDevice {
 private:
     std::string identifier;
+
+    uint64_t sizeBytes;
+
+    uint32_t logicalSectorSize;
+    uint32_t physicalSectorSize;
+
+    PartitionTableType partitionTable;
+    std::optional<std::string> diskId;
+
+    std::vector<Partition> partitions;
 
 public:
     BlockDevice(std::string identifier);
